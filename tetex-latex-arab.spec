@@ -1,20 +1,17 @@
 %define name tetex-latex-arab
-%define version 3.11k
-%define release 1mdk 
+%define version 3.11s
+%define release %mkrel 1
 
 Name:		%{name}
 Summary:	Files for processing Arabic LaTeX documents
 Version:	%{version}
 Release:	%{release}
-Source:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arabtex.tar.bz2
+Source:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arab311.tar.bz2
 License:	LPPL
 Group:		Publishing
 URL:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arabtex.htm
 Requires:	tetex >= 1.0.7
-Packager:	Taha Obeid <munzirtaha@newhorizons.com.sa>	
 BuildArch:	noarch
-Obsoletes:	arabtex
-Provides:	arabtex = %version
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -32,36 +29,14 @@ bidirectional line-breaking within insertions. The former limitation that an
 insertion must fit on the current line no more exists.
 
 %prep
-%setup -q -n arabtex
+%setup -q -c
 
 %install
-install -d -m 0755 %buildroot/%_datadir/texmf/fonts/source/arabtex
-install -d -m 0755 %buildroot/%_datadir/texmf/fonts/tfm/arabtex
-install -d -m 0755 %buildroot/%_datadir/texmf/fonts/type1/arabtex
-install -d -m 0755 %buildroot/%_datadir/texmf/fonts/pk/arabtex
-install -d -m 0755 %buildroot/%_datadir/texmf/tex/latex/arabtex
-install -d -m 0755 %buildroot/%_datadir/texmf/doc/arabtex
-
-for i in mfinput/*.mf; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/fonts/source/arabtex
-done
-for i in tfm/*.tfm; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/fonts/tfm/arabtex
-done
-for i in psfonts/*.pfb; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/fonts/type1/arabtex
-done
-for i in laser.pk/*; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/fonts/pk/arabtex
-done
-
-for i in texinput/*; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/tex/latex/arabtex
-done
-for i in doc/* examples/*; do
-	install -m 0644 $i %buildroot/%_datadir/texmf/doc/arabtex
-done
-
+rm -rf $RPM_BUILD_ROOT
+mv doc/arabtex/txt/* .
+rm -rf doc/arabtex/html
+install -d -m 0755 %buildroot/%_datadir/texmf
+cp -R fonts tex %buildroot/%_datadir/texmf
 
 %post 
 /usr/bin/env - /usr/bin/texhash 2> /dev/null
@@ -74,12 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(-,root,root,0755)
-%doc announce.txt changes2.txt changes.txt install.txt readme.txt
 %_datadir/texmf/fonts/source/arabtex
 %_datadir/texmf/fonts/tfm/arabtex
 %_datadir/texmf/fonts/type1/arabtex
 %_datadir/texmf/fonts/pk/arabtex
 %_datadir/texmf/tex/latex/arabtex
-%doc %_datadir/texmf/doc/arabtex
-
-
+%doc announce.txt arabtex.doc arabtex.faq arwindoc.tex changes.txt changes2.txt hebrew.305 kashmiri.tex lppl.txt malay.tex miktex.mai readme.305 readme.txt sindhi.tex tetex.txt uighur.tex
