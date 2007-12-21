@@ -12,6 +12,7 @@ Group:		Publishing
 URL:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arabtex.htm
 Requires:	tetex >= 1.0.7
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 ArabTeX is a TeX macro package with associated Naskh fonts designed to generate 
