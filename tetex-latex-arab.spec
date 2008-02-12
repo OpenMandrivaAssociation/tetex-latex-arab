@@ -15,7 +15,7 @@ BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
-ArabTeX is a TeX macro package with associated Naskh fonts designed to generate 
+ArabTeX is a TeX macro package with associated Naskh fonts designed to generate
 the Arabic writing from texts coded in an ASCII transliteration as well as in 
 some other popular encodings for Arabic and Hebrew, e.g. ASMO 449, ISO 8859-6 
 (ASMO 708), Arabic Windows encoding, and HED. It is compatible with Plain TeX, 
