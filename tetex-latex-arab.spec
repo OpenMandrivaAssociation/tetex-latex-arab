@@ -1,11 +1,10 @@
 %define name tetex-latex-arab
 %define version 3.11s
-%define release %mkrel 1
 
 Name:		%{name}
 Summary:	Files for processing Arabic LaTeX documents
 Version:	%{version}
-Release:	%{release}
+Release:	%mkrel 2
 Source:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arab311.tar.bz2
 License:	LPPL
 Group:		Publishing
