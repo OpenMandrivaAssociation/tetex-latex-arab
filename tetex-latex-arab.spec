@@ -31,7 +31,7 @@ insertion must fit on the current line no more exists.
 %setup -q -c
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 mv doc/arabtex/txt/* .
 rm -rf doc/arabtex/html
 install -d -m 0755 %buildroot/%_datadir/texmf
@@ -43,7 +43,7 @@ exit 0
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %files 
