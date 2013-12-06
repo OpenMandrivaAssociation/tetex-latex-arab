@@ -4,7 +4,7 @@
 Name:		%{name}
 Summary:	Files for processing Arabic LaTeX documents
 Version:	%{version}
-Release:	10
+Release:	11
 Source:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arab311.tar.bz2
 License:	LPPL
 Group:		Publishing
