@@ -4,7 +4,7 @@
 Name:		%{name}
 Summary:	Files for processing Arabic LaTeX documents
 Version:	%{version}
-Release:	16
+Release:	17
 Source:		ftp://ftp.informatik.uni-stuttgart.de/pub/arabtex/arab311.tar.bz2
 License:	LPPL
 Group:		Publishing
@@ -119,7 +119,7 @@ LyX, Arabic, Farsi, Uighuric, Urdu, Pashto, Persian and Hebrew modes.
 - Corrected the Licence line to say LPPL
 - gz to bz2 compression
 
-* Tue Jul 22 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 3.09f-4mdk
+* Tue Jul 22 2003 Per Ã˜yvind Karlsen <peroyvind@sintrax.net> 3.09f-4mdk
 - rebuild
 
 * Wed May 22 2002 Gwenole Beauchesne <gbeauchesne@mandrakesoft.com> 3.09f-3mdk
